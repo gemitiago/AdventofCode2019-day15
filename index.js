@@ -267,7 +267,7 @@ const printGrid = (_grid, currentPos = null, startingPos = null) => {
       if (pos === null) {
         line[j + offsetX] = ' ';
       } else {
-        line[j + offsetX] = pos.type;
+        line[j + offsetX] = pos.realType;
       }
 
       if (currentPos !== null && j === currentPos.pos[0] && i === currentPos.pos[1]) {
@@ -396,6 +396,7 @@ const minToFill = (input, printGridYN = false) => {
         let posU = getPos(grid, calcNextPos(position, 'U').pos);
 
         posU.type = 'O';
+        posU.realType = posU.type;
         listLastFilled.push(posU);
       }
 
@@ -403,6 +404,7 @@ const minToFill = (input, printGridYN = false) => {
         let posD = getPos(grid, calcNextPos(position, 'D').pos);
 
         posD.type = 'O';
+        posD.realType = posD.type;
         listLastFilled.push(posD);
       }
 
@@ -410,6 +412,7 @@ const minToFill = (input, printGridYN = false) => {
         let posR = getPos(grid, calcNextPos(position, 'R').pos);
 
         posR.type = 'O';
+        posR.realType = posR.type;
         listLastFilled.push(posR);
       }
 
@@ -417,6 +420,7 @@ const minToFill = (input, printGridYN = false) => {
         let posL = getPos(grid, calcNextPos(position, 'L').pos);
 
         posL.type = 'O';
+        posL.realType = posL.type;
         listLastFilled.push(posL);
       }
     }
